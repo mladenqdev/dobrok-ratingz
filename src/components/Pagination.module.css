@@ -1,0 +1,37 @@
+.pagination {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.page-item {
+	margin-right: 5px;
+}
+
+.page-arrow {
+	margin-right: 5px;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.3s ease;
+	pointer-events: none;
+}
+
+.page-arrow:last-of-type {
+	margin-right: 0;
+}
+
+.page-item:last-of-type {
+	margin-right: 0;
+}
+
+.show {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+/* @media screen and (max-width: 878px) {
+	
+} */

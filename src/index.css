@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Merienda', cursive, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+   sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::placeholder, input, textarea {
+	font-family: 'Merienda', cursive;
+}
+
+input, textarea {
+	border-radius: 10px;
+	padding: 5px 10px;
+}
+
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 15px;
+  min-height: 100vh;
+}
+
+.btn {
+	background-color: #e1e1e1;
+	border: 1px solid rgb(241, 239, 239);;
+	border-radius: 15px;
+	padding: 5px 12px;
+	font-family: 'Merienda', cursive;
+	transition: 0.3s ease;
+}
+
+.btn:hover {
+	background-color: rgb(241, 239, 239);
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+.btn--arrow {
+	background-color: rgb(241, 239, 239);
+	border: none;
+}
+
+.btn--arrow:hover {
+	background-color: rgb(241, 239, 239);
+	border: none;
+}
+
+.btn--pagination.active {
+	background-color: rgb(241, 239, 239);
+	border: 1px solid black;
+}
+
+.error-msg, .success-msg {
+	font-size: 12px;
+	color: red;
+	position: relative;
+	bottom: 10px;
+}
+
+.success-msg {
+	color: green;
+}
+
+.theme {
+	background-color: rgb(241, 239, 239);
+	transition: 0.4s ease;
+}
+
+.dark-mode {
+  background-color: rgb(34, 34, 34);
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode label, .dark-mode .light, .dark-mode a {
+  color: white;
+}
+
+.dark-mode .btn--pagination.active {
+	background: rgb(34, 34, 34);;
+	color: rgb(241, 239, 239);
+	border: 1px solid rgb(241, 239, 239);;
+}
+
+.dark-mode .btn--arrow {
+	background-color: rgb(34, 34, 34);;
+	color: white;
+}
+

@@ -1,0 +1,40 @@
+.form-container {
+	max-width: 400px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.login-title {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+/* .login-form {
+} */
+
+.login-group-ctrl {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
+}
+
+.login-group-ctrl:last-of-type {
+	margin-bottom: 20px;
+}
+
+.label {
+	margin-bottom: 10px;
+}
+
+.login-submit-btn {
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.login-text {
+	text-align: center;
+}
+
+.password-query {
+	margin-bottom: 15px;
+}
