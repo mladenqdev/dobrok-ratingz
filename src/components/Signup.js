@@ -26,7 +26,7 @@ const Signup = () => {
 			await signup(emailRef.current.value, passwordRef.current.value, displayNameRef.current.value)
 			history.push('/')
 		} catch {
-			setError('Failed to create an account')
+			setError('Failed to create an account / Password needs to have at least 6 characters')
 		}
 	}
 

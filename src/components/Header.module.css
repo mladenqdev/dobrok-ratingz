@@ -4,3 +4,13 @@
     justify-content: space-between;
     margin-bottom: 25px;
 }
+
+@media screen and (max-width: 878px) {
+	.header {
+        flex-direction: column-reverse;
+    }
+
+    .header button {
+        margin-bottom: 10px;
+    }
+}
