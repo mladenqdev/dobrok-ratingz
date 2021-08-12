@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import ForgotPassword from "./components/ForgotPassword";
 import PersonalMealsList from "./components/PersonalMealsList";
+import ChatContextProvider from "./contexts/ChatContext";
 
 const App = () => {
 
@@ -16,22 +17,24 @@ const App = () => {
 
 	return (
 		<MealsContextProvider>
-			<div className={`theme ${darkMode && 'dark-mode'}`}>
-				<div className="container">
-				<Header handleToggleDarkMode={setDarkMode} />
-					<Router>
-						<AuthProvider>
-							<Switch>
-								<PrivateRoute exact path="/" component={MealsList} />
-								<PrivateRoute path="/mylist" component={PersonalMealsList} />
-								<Route path="/signup" component={Signup} />
-								<Route path="/login" component={Login} />
-								<Route path='/forgot-password' component={ForgotPassword} />
-							</Switch>
-						</AuthProvider>
-					</Router>
+			<ChatContextProvider>
+				<div className={`theme ${darkMode && 'dark-mode'}`}>
+					<div className="container">
+					<Header handleToggleDarkMode={setDarkMode} />
+						<Router>
+							<AuthProvider>
+								<Switch>
+									<PrivateRoute exact path="/" component={MealsList} />
+									<PrivateRoute path="/mylist" component={PersonalMealsList} />
+									<Route path="/signup" component={Signup} />
+									<Route path="/login" component={Login} />
+									<Route path='/forgot-password' component={ForgotPassword} />
+								</Switch>
+							</AuthProvider>
+						</Router>
+					</div>
 				</div>
-			</div>
+			</ChatContextProvider>
 		</MealsContextProvider>
 
 	 );

@@ -8,10 +8,12 @@ import { useAuth } from '../contexts/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
 import Pagination from './Pagination';
 import { motion } from 'framer-motion';
+import Chat from './Chat';
 
 const MealsList = () => {
 	const { meals, searchTitle, setSearchTitle } = useContext(MealsContext);
 	const [error, setError] = useState('');
+	const [chat, setChat] = useState(false);
 	const { currentUser, logout } = useAuth();
 	const history = useHistory();
 
@@ -42,6 +44,11 @@ const MealsList = () => {
 		}
 	}
 
+	const handleOpenChat = () => {
+		document.body.style.overflow = 'hidden'
+		setChat(true);
+	}
+
 	return (
 		<div className={classes.home}>
 			<div className={classes['user-bar']}>
@@ -50,11 +57,13 @@ const MealsList = () => {
 				</span>
 				<Link onClick={() => setSearchTitle('')} className={`${classes['list-link']} light`} to="/mylist">My ratingz</Link>
 				<div>
+					<button className='btn btn--chat' onClick={handleOpenChat}>Chat</button>
 					<button className='btn' onClick={handleLogout}>Log Out</button>
 					{error && <span className={'error-msg'}>{error}</span>}
 				</div>
 			</div>
 			<Search />
+			{chat && <Chat closeModal={setChat} />}
 			<motion.div className={classes['meals-list']}
 				initial={{ x: '100vw'}}
 				animate={{ x: 0}}
